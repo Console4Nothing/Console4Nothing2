@@ -41,6 +41,12 @@
         <Compile Include="Main.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Console4NothingLoader\Console4NothingLoader.csproj">
+        <Project>{1d1b8fcc-a2af-4b65-93da-942ff0180889}</Project>
+        <Name>Console4NothingLoader</Name>
+      </ProjectReference>
+    </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
          Other similar extension points exist, see Microsoft.Common.targets.
