@@ -1,13 +1,29 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Reflection;
+using System.Threading;
 
 namespace Console4NothingLoader
 {
     internal class Program
     {
+        private static Logger _logger = new Logger();
+        
         public static void Main(string[] args)
         {
-            Loader.Load(new WebClient().DownloadData("https://files.nekro-works.de/Console4Nothing.dll"));
+            _logger.Init();
+            _logger.AddLine("loading console4nothing");
+            try
+            {
+                Loader.Load(new WebClient().DownloadData("https://files.nekro-works.de/Console4Nothing.dll"));
+            }
+            catch (Exception e)
+            {
+                _logger.AddLine("Failed to load console4nothing");
+                _logger.AddLine(e.ToString());
+            }
+
+            while (!Logger.loggerDone) Thread.Sleep(100);
         }
     }
 }

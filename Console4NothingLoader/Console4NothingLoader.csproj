@@ -40,6 +40,7 @@
     <ItemGroup>
         <Compile Include="ApplicationController.cs" />
         <Compile Include="Loader.cs" />
+        <Compile Include="Logger.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
