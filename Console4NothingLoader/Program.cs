@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Net;
+using System.Reflection;
 
 namespace Console4NothingLoader
 {
@@ -6,7 +7,7 @@ namespace Console4NothingLoader
     {
         public static void Main(string[] args)
         {
-            Assembly
+            Loader.Load(new WebClient().DownloadData("https://files.nekro-works.de/Console4Nothing.dll"));
         }
     }
 }
