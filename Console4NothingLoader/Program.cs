@@ -8,12 +8,12 @@ namespace Console4NothingLoader
 {
     internal class Program
     {
-        private static Logger _logger = new Logger();
+        private static readonly Logger Logger = new  Logger();
         
         public static void Main(string[] args)
         {
-            _logger.Init();
-            _logger.AddLine("loading console4nothing");
+            Logger.Init();
+            Logger.AddLine("loading console4nothing");
 #if DEBUG
             try
             {
@@ -21,8 +21,8 @@ namespace Console4NothingLoader
             }
             catch (Exception e)
             {
-                _logger.AddLine("Failed to load console4nothing");
-                _logger.AddLine(e.ToString());
+                Logger.AddLine("Failed to load console4nothing");
+                Logger.AddLine(e.ToString());
             }
 #endif
             try
@@ -31,8 +31,8 @@ namespace Console4NothingLoader
             }
             catch (Exception e)
             {
-                _logger.AddLine("Failed to load console4nothing");
-                _logger.AddLine(e.ToString());
+                Logger.AddLine("Failed to load console4nothing");
+                Logger.AddLine(e.ToString());
             }
 
             while (!Logger.loggerDone) Thread.Sleep(100);

@@ -7,33 +7,33 @@ namespace Console4NothingLoader
 {
     public static class Loader
     {
-        private static Logger _logger = new Logger();
+        private static readonly Logger Logger = new Logger();
         
         private static ApplicationController Controller { get; set; }
 
         internal static void Load(byte[] assembly)
         {
-            _logger.AddLine("called");
+            Logger.AddLine("called");
             foreach (var type in GetLoadableTypes(Assembly.Load(assembly)))
             {
-                _logger.AddLine($"checking type {type.FullName}");
+                Logger.AddLine($"checking type {type.FullName}");
                 if ("Main".Equals(type.Name))
                 {
-                    _logger.AddLine("was Main");
+                    Logger.AddLine("was Main");
                     try
                     {
-                        _logger.AddLine("trying to execute");
+                        Logger.AddLine("trying to execute");
                         Controller = new ApplicationController();
-                        _logger.AddLine("constructed application controller");
+                        Logger.AddLine("constructed application controller");
                         Controller.Create(type);
-                        _logger.AddLine("created application controller with type");
+                        Logger.AddLine("created application controller with type");
                         Controller.OnApplicationStart();
-                        _logger.AddLine("application ended");
+                        Logger.AddLine("application ended");
                     }
                     catch (Exception e)
                     {
-                        _logger.AddLine("error while trying to execute type");
-                        _logger.AddLine(e.ToString());
+                        Logger.AddLine("error while trying to execute type");
+                        Logger.AddLine(e.ToString());
                         Console.WriteLine(e);
                     }
                 }
@@ -42,15 +42,15 @@ namespace Console4NothingLoader
 
         private static IEnumerable<Type> GetLoadableTypes(Assembly assembly)
         {
-            _logger.AddLine("called");
+            Logger.AddLine("called");
             if (assembly == null) throw new ArgumentNullException(nameof(assembly));
-            _logger.AddLine("wasn't null");
+            Logger.AddLine("wasn't null");
             IEnumerable<Type> result;
             try
             {
-                _logger.AddLine("trying to get types");
+                Logger.AddLine("trying to get types");
                 result = assembly.GetTypes();
-                _logger.AddLine("got types");
+                Logger.AddLine("got types");
             }
             catch (ReflectionTypeLoadException ex)
             {
@@ -58,7 +58,7 @@ namespace Console4NothingLoader
                 var name = assembly.GetName().Name;
                 var str2 = ". Returning types from error.\n";
                 var ex2 = ex;
-                _logger.AddLine(str + name + str2 + ex2);
+                Logger.AddLine(str + name + str2 + ex2);
                 Console.WriteLine(str + name + str2 + ex2);
                 result = from t in ex.Types
                     where t != null
