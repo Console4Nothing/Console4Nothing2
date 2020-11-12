@@ -1,5 +1,5 @@
 ﻿using Console4NothingLoader;
-using Console4Nothing;
+
 namespace Console4Nothing
 {
     public class Main
