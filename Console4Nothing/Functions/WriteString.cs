@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Threading;
-
 using Console4NothingLoader;
 
 namespace Console4Nothing.Functions
 {
-    public class WriteString
+    internal class WriteString
     {
 
         private static readonly Logger Logger = new Logger();
