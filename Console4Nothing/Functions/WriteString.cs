@@ -4,7 +4,7 @@ using Console4NothingLoader;
 
 namespace Console4Nothing.Functions
 {
-    internal class WriteString
+    internal static class WriteString
     {
 
         private static readonly Logger Logger = new Logger();
