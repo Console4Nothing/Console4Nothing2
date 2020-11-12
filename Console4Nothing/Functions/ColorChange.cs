@@ -5,13 +5,13 @@ namespace Console4Nothing.Functions
 {
     public class ColorChange
     {
-        public static void MainColor() { Console.ForegroundColor = Color.FromArgb(0, 102, 255);}
-        public static void AccentColor() { Console.ForegroundColor = Color.FromArgb(102, 153, 255); }
-        public static void WritingColor() { Console.ForegroundColor = Color.FromArgb(229, 250, 255); }
+        internal static void MainColor() { Console.ForegroundColor = Color.FromArgb(0, 102, 255);}
+        internal static void AccentColor() { Console.ForegroundColor = Color.FromArgb(102, 153, 255); }
+        internal static void WritingColor() { Console.ForegroundColor = Color.FromArgb(229, 250, 255); }
 
-        public static void RGB(int Red, int Green, int Blue) 
+        internal static void Rgb(int red, int green, int blue) 
         {
-           Console.ForegroundColor = Color.FromArgb(Red,Green,Blue); 
+           Console.ForegroundColor = Color.FromArgb(red,green,blue); 
         }
 
     }
