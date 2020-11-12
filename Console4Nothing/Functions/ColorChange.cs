@@ -3,7 +3,7 @@ using Console = Colorful.Console;
 
 namespace Console4Nothing.Functions
 {
-    public class ColorChange
+    public static class ColorChange
     {
         internal static void MainColor() { Console.ForegroundColor = Color.FromArgb(0, 102, 255);}
         internal static void AccentColor() { Console.ForegroundColor = Color.FromArgb(102, 153, 255); }
