@@ -4,7 +4,7 @@ using Console4Nothing.Functions;
 
 namespace Console4Nothing
 {
-    public class Menu
+    internal static class Menu
     {
         private static int MenuDelay = 20;
 
