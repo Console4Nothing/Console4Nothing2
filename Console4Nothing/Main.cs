@@ -9,11 +9,10 @@ namespace Console4Nothing
         public static void OnApplicationStart()
         {
             Logger.AddLine("called");
-            Menu.Init();
             // start websocket stuff
             // ToDo: Add websocket connection
             // end websocket stuff
-            
+            Menu.Init();
         }
     }
 }
