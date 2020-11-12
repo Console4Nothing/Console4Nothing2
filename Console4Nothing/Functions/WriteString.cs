@@ -13,7 +13,7 @@ namespace Console4Nothing.Functions
 
         private static ConsoleColor GetRandomConsoleColor()
         {
-            var consoleColors = Enum.GetValues(typeof(ConsoleColor));
+            Array consoleColors = Enum.GetValues(typeof(ConsoleColor));
             return (ConsoleColor)consoleColors.GetValue(Random.Next(consoleColors.Length));
         }
 
