@@ -1,5 +1,4 @@
 using System;
-using System.Drawing;
 using Console = Colorful.Console;
 using Console4Nothing.Functions;
 
@@ -14,7 +13,7 @@ namespace Console4Nothing
 
             int MenuDelay = 20;
 
-            Console.Title = "NekroWorks Console4Nothing";
+            Console.Title = "Console4Nothing²";
 
 
             Console.WriteLine("\n");  
@@ -42,10 +41,6 @@ namespace Console4Nothing
 
 
             Console.ReadKey();
-
-
-
-
         }
     }
 }
