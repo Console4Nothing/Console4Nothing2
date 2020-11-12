@@ -10,19 +10,19 @@ namespace Console4Nothing.Functions
 
         private static readonly Logger Logger = new Logger();
 
-        private static Random _random = new Random();
+        private static readonly Random Random = new Random();
 
         private static ConsoleColor GetRandomConsoleColor()
         {
             var consoleColors = Enum.GetValues(typeof(ConsoleColor));
-            return (ConsoleColor)consoleColors.GetValue(_random.Next(consoleColors.Length));
+            return (ConsoleColor)consoleColors.GetValue(Random.Next(consoleColors.Length));
         }
 
-        public static void WriteString_Rainbow(string Text)
+        internal static void WriteString_Rainbow(string text)
         {
             Random random = new Random();
 
-            foreach (char c in Text)
+            foreach (char c in text)
             {
                 Console.Title = "NekroWorks Console4Nothing | State: -writing";
                 Console.ForegroundColor = GetRandomConsoleColor();
@@ -31,14 +31,14 @@ namespace Console4Nothing.Functions
                 Thread.Sleep(random.Next(50));
             }
 
-            Console.Title = "NekroWorks Console4Nothing";
+            Console.Title = "Console4Nothing²";
         }
 
-        public static void WriteString_(string Text)
+        internal static void WriteString_(string text)
         {
             Random random = new Random();
 
-            foreach (char c in Text)
+            foreach (char c in text)
             {
                 Console.Title = "NekroWorks Console4Nothing | State: -writing";
                 Console.Write(c);
@@ -46,22 +46,22 @@ namespace Console4Nothing.Functions
                 Thread.Sleep(random.Next(50));
             }
 
-            Console.Title = "NekroWorks Console4Nothing";
+            Console.Title = "Console4Nothing²";
         }
 
-        public static void WriteString_Delayed(string Text, int Delay)
+        internal static void WriteString_Delayed(string text, int delay)
         {
             Random random = new Random();
 
-            foreach (char c in Text)
+            foreach (char c in text)
             {
                 Console.Title = "NekroWorks Console4Nothing | State: -writing";
                 Console.Write(c);
                 Logger.AddLine("Wrote char " + c + " to console with delay");
-                Thread.Sleep(random.Next(Delay));
+                Thread.Sleep(random.Next(delay));
             }
 
-            Console.Title = "NekroWorks Console4Nothing";
+            Console.Title = "Console4Nothing²";
         }
 
     }
