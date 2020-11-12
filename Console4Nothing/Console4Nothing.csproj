@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Functions\Calculator\Binary.cs" />
+    <Compile Include="Functions\Calculator\Hex.cs" />
     <Compile Include="Functions\ColorChange.cs" />
     <Compile Include="Functions\WriteString.cs" />
     <Compile Include="Games\PingPong.cs" />
